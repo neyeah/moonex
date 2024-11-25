@@ -11,6 +11,7 @@ import {
   IconBook,
 } from '@tabler/icons-react';
 import clsx from 'clsx';
+import 'animate.css';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -64,7 +65,7 @@ export default function Navbar() {
               whileHover={{ rotate: 10 }}
             >
               <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              MoonEX
+                MoonEX
               </span>
             </motion.div>
           </div>
@@ -165,10 +166,10 @@ function NavLink({ href, children, active, mobile, onClick }) {
       href={href}
       onClick={onClick}
       className={clsx(
-        'relative font-medium transition-colors',
+        'relative font-medium transition-colors animate__animated',
         mobile
-          ? 'block text-lg text-white/80 hover:text-white'
-          : 'text-base lg:text-lg',
+          ? 'block text-lg text-white/80 hover:text-white animate__fadeInLeft'
+          : 'text-base lg:text-lg animate__fadeInLeft',
         active ? 'text-white' : 'text-white/60 hover:text-white'
       )}
     >

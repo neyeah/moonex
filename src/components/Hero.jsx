@@ -15,7 +15,7 @@ export default function Hero() {
         initial={{ scale: 1 }}
         animate={{ scale: 1.05 }}
         transition={{
-          duration: 6,
+          duration: 4,
           repeat: Infinity,
           repeatType: 'reverse',
         }}
@@ -31,7 +31,10 @@ export default function Hero() {
           <div className="space-y-8">
             {/* Badge */}
             <motion.div
-              className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 animate__animated animate__fadeIn animate__delay-1s"
+              className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
               <span className="text-sm font-medium text-white/80">
                 ✨ Now Live on 15+ Chains
@@ -39,27 +42,37 @@ export default function Hero() {
             </motion.div>
 
             {/* Heading */}
-            <div className="animate__animated animate__fadeIn">
-  <h1 className="text-5xl lg:text-6xl font-bold tracking-tight text-white">
-    <span>Trusted Multi-Chain</span>{' '}
-    <span className="block lg:inline text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">
-      DEX Platform
-    </span>
-  </h1>
-</div>
-
+            <motion.h1
+              className="text-5xl lg:text-6xl font-bold tracking-tight text-white"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <span>Trusted Multi-Chain</span>{' '}
+              <span className="block lg:inline text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">
+                DEX Platform
+              </span>
+            </motion.h1>
 
             {/* Subheading */}
-            <p className="text-lg lg:text-xl text-gray-300 max-w-xl animate__animated animate__fadeInUp animate__delay-3s">
+            <motion.p
+              className="text-lg lg:text-xl text-gray-300 max-w-xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
               Trade, earn, and own crypto on the all-in-one multi-chain DEX.
-            </p>
+            </motion.p>
 
             {/* Buttons */}
             <div className="flex flex-wrap gap-4 pt-4">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium rounded-xl shadow-lg hover:shadow-blue-500/40 transition-all animate__animated animate__fadeInUp animate__delay-4s"
+                className="group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium rounded-xl shadow-lg hover:shadow-blue-500/40 transition-all"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
               >
                 <IconWallet size={20} />
                 <span>Connect Wallet</span>
@@ -68,7 +81,10 @@ export default function Hero() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-2 px-8 py-4 border border-blue-500 text-white font-medium rounded-xl hover:bg-blue-500/10 transition-all animate__animated animate__fadeInUp animate__delay-4s"
+                className="flex items-center gap-2 px-8 py-4 border border-blue-500 text-white font-medium rounded-xl hover:bg-blue-500/10 transition-all"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1 }}
               >
                 <span>Trade Crypto</span>
               </motion.button>
