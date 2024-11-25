@@ -39,8 +39,8 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           {/* Left Side: Menu Icon and Logo */}
           <div className="flex items-center gap-3">
-            {/* Menu Icon for Mobile */}
-            <div className="flex md:hidden">
+            {/* Menu Icon for Mobile and Tablets */}
+            <div className="flex lg:hidden">
               <button onClick={() => setSideBarOpen(true)}>
                 <IconMenu2 size={24} className="text-white" />
               </button>
@@ -61,7 +61,7 @@ export default function Navbar() {
           </div>
 
           {/* Navigation Links for Desktop */}
-          <div className="hidden md:flex items-center gap-12">
+          <div className="hidden lg:flex items-center gap-12">
             {navItems.map((item, index) => (
               <NavLink key={item.name} href="#" active={index === 0}>
                 {item.name}
@@ -69,7 +69,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Connect Wallet Button */}
+          {/* Connect Wallet Button (Always Visible) */}
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -81,7 +81,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Side Bar for Mobile */}
+      {/* Side Bar for Mobile and Tablet */}
       <AnimatePresence>
         {sideBarOpen && (
           <motion.div
@@ -159,7 +159,7 @@ function NavLink({ href, children, active, mobile, onClick }) {
         'relative font-medium transition-colors',
         mobile
           ? 'block text-lg text-white/80 hover:text-white'
-          : 'text-base md:text-lg',
+          : 'text-base lg:text-lg',
         active ? 'text-white' : 'text-white/60 hover:text-white'
       )}
     >
