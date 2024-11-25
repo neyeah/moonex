@@ -13,7 +13,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/80"></div>
 
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-64">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-40 sm:pt-40 md:pt-48 lg:pt-64">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column */}
           <motion.div
