@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Fira+Code:wght@400;700&display=swap');
+
+:root {
+  --font-primary: 'Raleway', sans-serif;
+  --font-secondary: 'Fira Code', monospace;
+}
+
+body {
+  font-family: var(--font-primary);
+}
+
+
 /* src/index.css */
 @tailwind base;
 @tailwind components;

@@ -1,10 +1,12 @@
-// src/App.jsx
+import React from 'react';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+
 function App() {
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <button className="px-4 py-2 text-white bg-blue-500 rounded animate-bounce">
-        Animated Button
-      </button>
+    <div>
+      <Navbar />
+      <Hero />
     </div>
   );
 }
