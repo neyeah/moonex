@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   IconWallet,
@@ -16,6 +16,15 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [sideBarOpen, setSideBarOpen] = useState(false);
 
+  // Detect scroll to update isScrolled state
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const navItems = [
     { name: 'Trade', icon: <IconExchange size={20} /> },
     { name: 'Stake', icon: <IconPlant size={20} /> },
@@ -29,9 +38,9 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={clsx(
-        'fixed w-full top-0 z-50 transition-all duration-300',
+        'fixed w-full top-0 z-50 border-b border-white/10 transition-all duration-300',
         isScrolled
-          ? 'bg-[#0B1121]/80 backdrop-blur-xl border-b border-white/10'
+          ? 'bg-[#0B1121]/80 backdrop-blur-xl'
           : 'bg-transparent'
       )}
     >
@@ -55,7 +64,7 @@ export default function Navbar() {
               whileHover={{ rotate: 10 }}
             >
               <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Moonex
+              MoonEX
               </span>
             </motion.div>
           </div>

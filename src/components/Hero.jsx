@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { IconWallet } from '@tabler/icons-react';
 import Stats from './Stats';
-import Features from './Features';
+
 
 export default function Hero() {
   return (
@@ -71,7 +71,6 @@ export default function Hero() {
 
         {/* Optional Additional Sections */}
         <Stats />
-        <Features />
       </div>
     </div>
   );
